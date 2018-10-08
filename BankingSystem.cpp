@@ -28,6 +28,16 @@ public:
 		strcpy(cusName, name);
 	}
 
+    
+	Account(const Account& copy)
+		:accID(copy.accID), balance(copy.balance)
+	{
+		cusName = new char[strlen(copy.cusName) + 1];
+		strcpy(cusName, copy.cusName);
+	}
+
+
+
 	int getAccID()
 	{
 		return accID;
